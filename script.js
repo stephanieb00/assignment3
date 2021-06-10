@@ -8,13 +8,8 @@ function addR() {
     alert("Clicked Add Row")
 
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
-    let added_row = document.createElement("tr");
-    added_row.classList.add("new-row");
-    grid.appendChild(added_row);
-
-    for (let i = 0; i < numCols; i++) {
-        added_row.appendChild(createCell("new-row"));
-    }//end of for loop
+    let newRow = grid.insertRow(-1);
+    let newColumn = newRow.insertCell(0);
 }
 //Adds a column
 function addC() {
