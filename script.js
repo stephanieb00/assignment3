@@ -4,16 +4,27 @@ let colorSelected;
 
 //Adds a row
 function addR() {
-    numRows++;//numRows goes up by one.
     alert("Clicked Add Row")
+    numRows++;//numRows goes up by one.
 
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
-    let newRow = grid.insertRow(-1);
-    let newColumn = newRow.insertCell(0);
+    let newRow = grid.insertRow(-1);//inserts row at the end of the table.
+    // insert table cells to the new row
+    for (i = 0; i < numCols; i++) {
+        //cells = newRow.insertCell(-1);
+        let newColumn = newRow.insertCell(-1);//inserts a cell at index 0;
+    }
 }
 //Adds a column
 function addC() {
     alert("Clicked Add Col")
+    numCols++;//numCols goes up by one.
+
+    let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
+
+    for (let i = 0; i < numRows; i++) {
+        let newColumn = grid.rows[i].insertCell(numRows);      
+    }
 }
 
 //Removes a row
