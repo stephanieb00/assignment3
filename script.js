@@ -51,7 +51,6 @@ function removeC() {
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
-    
 
     let myTD = document.getElementsByTagName("td");//get the td element and set it to myTD
     for (let i = 0; i < myTD.length; i++) {
@@ -59,10 +58,12 @@ function selected(){
             myTD[i].style.background = colorSelected;//on click change the background of the cell to the color selected.
         })
     }//end of for loop.
+
 }
 
 function fill(){
     alert("Clicked Fill All")
+
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
 
     let myTD = grid.getElementsByTagName("td");//get the elements with the td tag.
@@ -70,6 +71,9 @@ function fill(){
     for (let i = 0; i < myTD.length; i++) {
         myTD[i].style.backgroundColor = colorSelected;//set all cells to colorSelected.
     }//end of for loop.
+
+    
+
 }
 
 function clearAll(){
