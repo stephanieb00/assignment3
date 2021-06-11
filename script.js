@@ -55,7 +55,7 @@ function selected(){
     let myTD = document.getElementsByTagName("td");//get the td element and set it to myTD
     for (let i = 0; i < myTD.length; i++) {
         myTD[i].addEventListener("click",function(){
-            myTD[i].style.background = colorSelected;//on click change the background of the cell to the color selected.
+            myTD[i].style.backgroundColor = colorSelected;//on click change the background of the cell to the color selected.
         })
     }//end of for loop.
 
@@ -83,7 +83,7 @@ function clearAll(){
     let myTD = grid.getElementsByTagName("td");//get the elements with the td tag.
 
     for (let i = 0; i < myTD.length; i++) {
-        myTD[i].style.backgroundColor = "white";//set all cells to colorSelected.
+        myTD[i].style.backgroundColor = "white";//set all cells to white
     }//end of for loop.
 
 
@@ -92,4 +92,29 @@ function clearAll(){
 
 function fillU(){
     alert("Clicked Fill All Uncolored")
+
+    let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
+
+    let myTD = grid.getElementsByTagName("td");//get the elements with the td tag.
+
+    for (let i = 0; i < myTD.length; i++) {
+
+        let isColored;
+        if (myTD[i].style.backgroundColor != "white" )
+        {
+            isColored = true;//if the cell is not white then it is colored.
+        }//end of if statement.
+        else
+        {
+            isColored = false;//if it is white then isColored is false
+        }//end of else statement.
+
+        if(!isColored)
+        {
+            myTD[i].style.backgroundColor = colorSelected;
+        }//end of if statement;
+
+    }//end of for loop.
+
+
 }
