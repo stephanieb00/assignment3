@@ -12,7 +12,7 @@ function addR() {
     // insert table cells to the new row
     for (i = 0; i < numCols; i++) {
         //cells = newRow.insertCell(-1);
-        let newColumn = newRow.insertCell(-1);//inserts a cell at index 0;
+        let fillColumn = newRow.insertCell(-1);//inserts a cell at index 0;
     }
 }
 //Adds a column
@@ -22,14 +22,19 @@ function addC() {
 
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
 
-    for (let i = 0; i < numRows; i++) {
-        let newColumn = grid.rows[i].insertCell(numRows);      
+    for (let i = 0; i < grid.rows.length; i++) {
+        let newColumn = grid.rows[i].insertCell(grid.rows[i].cells.length);      
     }
 }
 
 //Removes a row
 function removeR() {
     alert("Clicked Remove Row")
+    numRows--;//numCols goes down by one.
+
+    let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
+    let lastRow = grid.rows.length - 1;
+    grid.deleteRow(lastRow);
 }
 //Remove a column
 function removeC() {
