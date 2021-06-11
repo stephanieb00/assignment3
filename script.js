@@ -78,6 +78,16 @@ function fill(){
 
 function clearAll(){
     alert("Clicked Clear All")
+    let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
+
+    let myTD = grid.getElementsByTagName("td");//get the elements with the td tag.
+
+    for (let i = 0; i < myTD.length; i++) {
+        myTD[i].style.backgroundColor = "white";//set all cells to colorSelected.
+    }//end of for loop.
+
+
+
 }
 
 function fillU(){
