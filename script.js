@@ -51,10 +51,20 @@ function removeC() {
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
+    let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
+
+
+    myTD = document.getElementsByTagName("td");
+    for (let i = 0; i < myTD.length; i++) {
+        myTD[i].addEventListener("click",function(){
+            myTD[i].style.background = colorSelected;
+        })
+    }
 }
 
 function fill(){
     alert("Clicked Fill All")
+    
 }
 
 function clearAll(){
