@@ -111,10 +111,9 @@ function fillU(){
 
         if(!isColored)
         {
-            myTD[i].style.backgroundColor = colorSelected;
+            myTD[i].style.backgroundColor = colorSelected;//if its not colored then fill it with the color selected.
         }//end of if statement;
 
     }//end of for loop.
-
 
 }
