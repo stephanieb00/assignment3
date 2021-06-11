@@ -30,15 +30,23 @@ function addC() {
 //Removes a row
 function removeR() {
     alert("Clicked Remove Row")
-    numRows--;//numCols goes down by one.
+    numRows--;//numRows goes down by one.
 
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
-    let lastRow = grid.rows.length - 1;
-    grid.deleteRow(lastRow);
+    
+    grid.deleteRow(numRows);//deletes the last row
 }
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
+    numCols--;//numCols goes down by one.
+    
+    let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
+
+    for (let i = 0; i < grid.rows.length; i++) {
+        grid.rows[i].deleteCell(numCols);
+    }
+
 }
 //sets global var for selected color
 function selected(){
