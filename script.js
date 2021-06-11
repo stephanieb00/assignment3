@@ -13,7 +13,7 @@ function addR() {
     for (i = 0; i < numCols; i++) {
         //cells = newRow.insertCell(-1);
         let fillColumn = newRow.insertCell(-1);//inserts a cell at index 0;
-    }
+    }//end of for loop.
 }
 //Adds a column
 function addC() {
@@ -23,8 +23,8 @@ function addC() {
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
 
     for (let i = 0; i < grid.rows.length; i++) {
-        let newColumn = grid.rows[i].insertCell(grid.rows[i].cells.length);      
-    }
+        let newColumn = grid.rows[i].insertCell(grid.rows[i].cells.length);// adds a column to each row that exists.    
+    }//end of for loop.
 }
 
 //Removes a row
@@ -33,7 +33,6 @@ function removeR() {
     numRows--;//numRows goes down by one.
 
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
-    
     grid.deleteRow(numRows);//deletes the last row
 }
 //Remove a column
@@ -44,8 +43,8 @@ function removeC() {
     let grid = document.getElementById("grid"); //set grid to the table names grid in the HTML.
 
     for (let i = 0; i < grid.rows.length; i++) {
-        grid.rows[i].deleteCell(numCols);
-    }
+        grid.rows[i].deleteCell(numCols);// delets a column for each row that exists.
+    }//end of for loop.
 
 }
 //sets global var for selected color
